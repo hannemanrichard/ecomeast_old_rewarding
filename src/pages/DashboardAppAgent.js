@@ -136,7 +136,7 @@ export default function DashboardAppAgent() {
           .select('*', { count: 'exact' })
           .eq('entity', 'lead')
           .eq('user_fullname', agentName)
-          .not('last_status', 'in', '(other,initial)')
+          .not('last_status', 'in', '(other,initial,out-of-stock)')
           .gt('created_at', formattedToday);
 
         if (dataCalls) {
